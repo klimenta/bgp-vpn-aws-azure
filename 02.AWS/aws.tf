@@ -10,7 +10,7 @@ module "vpc" {
   private_subnets = var.sub_pvtCIDR
   public_subnets  = var.sub_pubCIDR
 
-  enable_nat_gateway = true
+  enable_nat_gateway = false
   enable_vpn_gateway = true
   amazon_side_asn    = var.asn_AWS
 }

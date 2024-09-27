@@ -23,7 +23,7 @@ variable "vpc_AZs" {
   description = "Location of available zones"
 }
 
-variable "sub_pVTCIDR" {
+variable "sub_pvtCIDR" {
   type        = list(string)
   default     = ["10.2.1.0/24"]
   description = "Private subnet CIDR"
