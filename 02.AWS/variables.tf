@@ -23,16 +23,16 @@ variable "vpc_AZs" {
   description = "Location of available zones"
 }
 
+variable "sub_pubCIDR" {
+  type        = list(string)
+  default     = ["10.2.0.0/24"]
+  description = "Public subnet CIDR"
+}
+
 variable "sub_pvtCIDR" {
   type        = list(string)
   default     = ["10.2.1.0/24"]
   description = "Private subnet CIDR"
-}
-
-variable "sub_pubCIDR" {
-  type        = list(string)
-  default     = ["10.2.2.0/24"]
-  description = "Public subnet CIDR"
 }
 
 # Customer gateways
@@ -47,7 +47,7 @@ variable "cgw_Name" {
 ####
 variable "vgw_publicip_1" {
   type        = string
-  default     = "4.153.88.226"
+  default     = "4.153.47.108"
   description = "Use the output from previous Azure script. First public IP of the Virtual Network Gateway in Azure"
 }
 
@@ -56,7 +56,7 @@ variable "vgw_publicip_1" {
 ####
 variable "vgw_publicip_2" {
   type        = string
-  default     = "4.153.88.212"
+  default     = "4.153.47.74"
   description = "Use the output from previous Azure script. Second public IP of the Virtual Network Gateway in Azure"
 }
 
