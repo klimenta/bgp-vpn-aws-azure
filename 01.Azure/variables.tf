@@ -230,7 +230,7 @@ variable "lng_AWST1A1" {
 }
 
 ###
-### REPLACE FROM THE OUTPUT OF AWS
+### REPLACE FROM THE OUTPUT OF AWS IN STEP 2
 ###
 variable "ip_AWST1A1" {
   type        = string
