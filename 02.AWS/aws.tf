@@ -10,16 +10,29 @@ module "vpc" {
   private_subnets = var.sub_pvtCIDR
   public_subnets  = var.sub_pubCIDR
 
-  enable_nat_gateway = false
+  enable_nat_gateway = true
   enable_vpn_gateway = true
   amazon_side_asn    = var.asn_AWS
 }
 
-# Change the route to enable propagation
-resource "aws_vpn_gateway_route_propagation" "rtPropg" {
+# Change the route to enable propagation to public route table
+# resource "aws_vpn_gateway_route_propagation" "rtPropg" {
+#   vpn_gateway_id = module.vpc.vgw_id
+#   route_table_id = module.vpc.public_route_table_ids[0]
+# }
+
+# Change the route to enable propagation to private route table
+resource "aws_vpn_gateway_route_propagation" "rtPvtPropg" {
   vpn_gateway_id = module.vpc.vgw_id
-  route_table_id = module.vpc.public_route_table_ids[0]
+  route_table_id = module.vpc.private_route_table_ids[0]
 }
+
+# Add the NAT gateway as a route to Internet to the private route table
+# resource "aws_route" "r" {
+#   route_table_id         = module.vpc.private_route_table_ids[0]
+#   destination_cidr_block = "0.0.0.0/0"
+#   nat_gateway_id         = module.vpc.natgw_ids[0]
+# }
 
 # Create 2 customer gateways
 module "cgw" {

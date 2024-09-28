@@ -152,7 +152,7 @@ variable "lng_AWST1A0" {
 ###
 variable "ip_AWST1A0" {
   type        = string
-  default     = "3.17.34.148"
+  default     = "3.12.25.130"
   description = "Enter the output of ip_AWST1IP1 from the AWS output.tf script"
 }
 
@@ -193,7 +193,7 @@ variable "lng_AWST2A0" {
 ###
 variable "ip_AWST2A0" {
   type        = string
-  default     = "3.134.53.8"
+  default     = "3.134.250.132"
   description = "Enter the output of ip_AWST2A0 from the AWS output.tf script"
 }
 
@@ -234,7 +234,7 @@ variable "lng_AWST1A1" {
 ###
 variable "ip_AWST1A1" {
   type        = string
-  default     = "3.17.212.31"
+  default     = "3.128.169.24"
   description = "Enter the output of ip_AWST1A1 from the AWS output.tf script"
 }
 
@@ -275,7 +275,7 @@ variable "lng_AWST2A1" {
 ###
 variable "ip_AWST2A1" {
   type        = string
-  default     = "3.21.121.255"
+  default     = "18.217.179.34"
   description = "Enter the output of ip_AWST2A1 from the AWS ouput.tf script"
 }
 
